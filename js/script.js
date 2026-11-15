@@ -1,7 +1,7 @@
 var PHONE="2348106754141",GALLERY=[
  "https://images.unsplash.com/photo-1687422808289-e721259c9eb4?auto=format&fit=crop&w=1200&q=85",
  "https://images.unsplash.com/photo-1663044022557-7d5d4c1d5318?auto=format&fit=crop&w=1200&q=85",
- "https://images.unsplash.com/photo-1782566208081-6b5135fddf23?auto=format&fit=crop&w=1200&q=85"
+ "https://images.unsplash.com/photo-1621062089461-01f1eaebb66c?auto=format&fit=crop&w=1200&q=85"
 ];
 var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
 var ws=["Bespoke Suits","Corporate Outfits","African Wear","Luxury · Style · Lifestyle"];
