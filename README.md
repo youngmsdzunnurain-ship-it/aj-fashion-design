@@ -1,57 +1,62 @@
 # A.J Couture & Lifestyle Hub
 
-A responsive, single-page website for A.J Couture & Lifestyle Hub (AJ Stitches), based in Offa, Kwara State, Nigeria.
+A responsive, single-page website for A.J Couture & Lifestyle Hub, based in Offa, Kwara State, Nigeria.
 
 ## Project structure
 
-- `index.html` — page content and semantic structure
-- `css/style.css` — layout, responsive styling, colors and motion
-- `js/script.js` — gallery image loading, scroll effects, interactions and WhatsApp booking handoff
+- `index.html` — semantic page content, business metadata and enquiry form
+- `css/style.css` — responsive emerald-green and gold styling, layout and motion
+- `js/script.js` — accessible page interactions and WhatsApp enquiry handoff
+- `assets/images/aj-couture-promo.jpg` — supplied A.J Couture promotional artwork (add this file before publishing)
+- `assets/images/favicon.svg` — lightweight brand favicon
+- `privacy.html` — privacy notice
+- `netlify.toml` — static-site publishing and response-header configuration
 
 ## Preview locally
 
 From the project directory, run:
 
 ```bash
-python -m http.server 8087
-```
-
-Then open `http://127.0.0.1:8087`.
-
-If Python's HTTP server is unavailable in Termux, use:
-
-```bash
 php -S 127.0.0.1:8087
 ```
 
-## Contact
+Open http://127.0.0.1:8087.
 
-WhatsApp / phone: +234 810 675 4141
+## Business contact
 
-Location: Offa, Kwara State, Nigeria.
+- Business: A.J Couture & Lifestyle Hub
+- Location: Offa, Kwara State, Nigeria
+- WhatsApp / phone: +234 810 675 4141
+- Email: haminatadebiyi@gmail.com
+- Instagram: @aj_couturehub
 
-The booking form opens WhatsApp with the visitor's message prefilled. It does not submit information to a website server or database.
+The enquiry form prepares a WhatsApp message. Visitors review and send it themselves; the static website does not store form submissions.
 
-## Photography and brand image
+## Photography
 
-The gallery uses contemporary womenswear and African couture reference photography from ADJOAA, Wanni Fuga, TUBỌ and Otunba. These are editorial/product references, not confirmed photographs of AJ Stitches customers or completed commissions. Replace them with AJ Stitches original work when available.
+The hero uses the brand's supplied promotional artwork. The four style cards describe services and are not presented as photographs of completed customer commissions. Add only original AJ work or photographs for which the business has publication permission.
 
+## Netlify deployment
 
-Images are externally hosted and require an internet connection.
+This is a static HTML/CSS/JavaScript website. No framework build command or paid server is required.
 
+1. Push the finished project to the GitHub `main` branch.
+2. In Netlify, choose **Add new project → Import an existing project → GitHub**.
+3. Select `youngmsdzunnurain-ship-it/aj-fashion-design`.
+4. Keep the repository root as the base directory. The included `netlify.toml` sets the publish directory to `.`.
+5. Select **Deploy**. Netlify will deploy future commits to the production branch automatically.
+6. Choose the free `*.netlify.app` site name or connect a domain you own.
 
-## Search engine and sharing setup
+Official guide: https://docs.netlify.com/start/quickstarts/deploy-from-repository/
 
-The page includes a descriptive title and meta description, Open Graph/Twitter sharing metadata, structured business information (JSON-LD), and a basic `robots.txt`.
+## Before launch
 
-Before launch on a public domain:
-- Set the canonical URL and add a sitemap using the final HTTPS domain.
-- Verify the domain in Google Search Console and submit the sitemap.
-- Add the final brand photography and social-sharing image; the temporary profile image has intentionally been removed pending the owner's actual image.
-- Replace editorial fashion references with original AJ Stitches work when available and approved for publication.
+- Add `assets/images/aj-couture-promo.jpg` (the supplied promotional artwork (JPEG)).
+- Confirm the deployed preview on a phone and desktop.
+- Test the WhatsApp, telephone, email and Instagram links.
+- Add a canonical URL and sitemap only after the final public Netlify/custom domain is known.
+- Replace the generic service cards with original portfolio photos when the owner has approved images.
 
-Search engines decide when and whether to index a site; metadata improves clarity but does not guarantee ranking or immediate appearance in results.
+## Search and privacy
 
-
-## Privacy and accessibility
-A privacy notice is available at `privacy.html`. Booking details are passed to WhatsApp only when the visitor chooses to submit; this static website does not store booking submissions. Enquiry fields have visible labels, the hero image loads with high priority, and gallery photographs use lazy loading and asynchronous decoding.
+The page includes a descriptive title, meta description, Open Graph/Twitter metadata and ClothingStore structured data. A privacy notice is available at `privacy.html`. Search engines control indexing; metadata does not guarantee ranking or immediate appearance.
