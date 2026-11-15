@@ -8,7 +8,7 @@ Production branch: `main`
 
 ## Before connecting Netlify
 
-1. Confirm that `assets/images/aj-couture-promo.webp` exists in the repository. It is the supplied promotional artwork used by the hero and social-sharing metadata.
+1. Confirm that `assets/images/aj-couture-promo.jpg` exists in the repository. It is the supplied promotional artwork used by the hero and social-sharing metadata.
 2. Preview the site locally and verify WhatsApp, phone, email and Instagram links.
 3. Merge the launch-ready pull request into `main` only after the image and checks are complete.
 
