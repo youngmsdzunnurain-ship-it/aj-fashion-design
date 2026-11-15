@@ -29,6 +29,12 @@ test("original hero stays in place and supplied AJ image is in the About column 
   assert.equal((html.match(/src="assets\/images\/aj-couture-promo\.jpg"/g) || []).length, 1);
 });
 
+test("hero portrait is presented without a card and About artwork fills the existing arch frame", () => {
+  assert.match(css, /\.hero-fashion\{[^}]*border:0[^}]*border-radius:0[^}]*background:transparent[^}]*box-shadow:none/);
+  assert.match(css, /\.about-image\{[^}]*object-fit:cover[^}]*border-radius:190px 190px 14px 14px/);
+  assert.doesNotMatch(css.match(/\.about-image\{[^}]*\}/)?.[0] ?? "", /border-radius:50%|object-fit:contain/);
+});
+
 test("navigation anchors resolve to unique page sections", () => {
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
   assert.equal(ids.length, new Set(ids).size, "Duplicate HTML id found");
