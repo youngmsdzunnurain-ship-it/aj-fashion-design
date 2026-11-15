@@ -101,3 +101,6 @@ main{position:relative;z-index:1}
 .tile::after{content:"";position:absolute;inset:35% 0 0;z-index:1;background:linear-gradient(transparent,#041a14ef)}
 .tile figcaption{position:relative;z-index:2;padding:1.1rem;font:700 1.35rem/1.1 var(--d);text-shadow:0 2px 10px #0008}
 @media(max-width:860px){.hero-fashion{height:480px;min-height:0}}
+
+/* Accessibility: visible labels and predictable keyboard focus for enquiries */
+.bk form label{display:block;font-weight:600;margin:.25rem 0 -.45rem}.bk input,.bk select,.bk textarea{min-height:48px}
