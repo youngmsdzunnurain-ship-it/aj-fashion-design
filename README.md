@@ -32,12 +32,10 @@ Location: Offa, Kwara State, Nigeria.
 
 The booking form opens WhatsApp with the visitor's message prefilled. It does not submit information to a website server or database.
 
-## Photography
+## Photography and brand image
 
-The gallery uses externally hosted Unsplash photographs. They are illustrative fashion references, not confirmed photographs of AJ Stitches' own customers or completed work. Replace them with the business's original portfolio photographs when available.
+The gallery uses contemporary womenswear and African couture reference photography from ADJOAA, Wanni Fuga, TUBỌ and Otunba. These are editorial/product references, not confirmed photographs of AJ Stitches customers or completed commissions. Replace them with AJ Stitches original work when available.
 
-- [African tailor working at a sewing machine — Ali Mkumbwa](https://unsplash.com/photos/a-man-is-working-on-a-sewing-machine-1SAFRlUY0lk)
-- [African fashion couple in matching outfits — Delight Dzansi](https://unsplash.com/photos/a-couple-of-men-posing-for-the-camera-6CDhpQgGFgY)
-- [Menswear model in a grey suit — Khalid Boutchich](https://unsplash.com/photos/man-in-gray-suit-standing-near-building-during-daytime-wS1k0VzXVrA)
+The profile section uses the enhanced image supplied for the AJ brand. Place it at `assets/images/aj-brand-profile-enhanced.jpg`.
 
-Images are served by Unsplash and require an internet connection.
+Images are externally hosted and require an internet connection.
