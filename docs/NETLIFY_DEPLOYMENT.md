@@ -8,9 +8,11 @@ Production branch: `main`
 
 ## Before connecting Netlify
 
-1. Confirm that `assets/images/aj-couture-promo.jpg` exists in the repository. It is the supplied promotional artwork used by the hero and social-sharing metadata.
-2. Preview the site locally and verify WhatsApp, phone, email and Instagram links.
-3. Merge the launch-ready pull request into `main` only after the image and checks are complete.
+1. Confirm that `assets/images/aj-couture-promo.jpg` loads in the reviewed branch. The supplied promotional artwork is already committed there and is used by the hero and social-sharing metadata.
+2. Keep the existing hero image and its position unchanged.
+3. Preview the site locally and verify WhatsApp, phone, email and Instagram links with the business owner.
+4. Merge the launch-ready pull request into `main` only after the review and checks pass.
+5. AJ's founder portrait is a separate About-section asset. It is not currently present in the repository; do not substitute stock photography.
 
 ## Connect GitHub to Netlify
 
@@ -26,7 +28,7 @@ Production branch: `main`
 ## After first deploy
 
 - Choose a memorable free Netlify subdomain under **Domain management**.
-- Add the final site URL as the canonical URL and create `sitemap.xml`; do not publish placeholder URLs.
+- Set the final site URL as the canonical URL and create `sitemap.xml`; do not publish placeholder URLs.
 - Verify the site in Google Search Console and submit the sitemap.
 - Test HTTPS, page sharing preview, form handoff and every contact link.
 - Keep Netlify deploy previews enabled for future pull requests.
