@@ -8,9 +8,9 @@ Production branch: `main`
 
 ## Before connecting Netlify
 
-1. Confirm that `assets/images/aj-couture-promo.jpg` exists in the repository. It is the supplied promotional artwork used by the hero and social-sharing metadata.
+1. Confirm that `assets/images/aj-couture-promo.jpg` and `assets/images/aj-brand-profile.png` exist in the repository. The promotional artwork is displayed below About; the founder portrait appears beside the About copy. The original hero photograph remains in its original position.
 2. Preview the site locally and verify WhatsApp, phone, email and Instagram links.
-3. Merge the launch-ready pull request into `main` only after the image and checks are complete.
+3. Merge the image-restoration pull request into `main` only after the preview and automated checks are complete.
 
 ## Connect GitHub to Netlify
 
