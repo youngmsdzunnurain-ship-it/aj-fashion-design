@@ -51,3 +51,7 @@ Before launch on a public domain:
 - Replace editorial fashion references with original AJ Stitches work when available and approved for publication.
 
 Search engines decide when and whether to index a site; metadata improves clarity but does not guarantee ranking or immediate appearance in results.
+
+
+## Privacy and accessibility
+A privacy notice is available at `privacy.html`. Booking details are passed to WhatsApp only when the visitor chooses to submit; this static website does not store booking submissions. Enquiry fields have visible labels, the hero image loads with high priority, and gallery photographs use lazy loading and asynchronous decoding.
