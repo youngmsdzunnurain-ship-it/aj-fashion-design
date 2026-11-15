@@ -86,3 +86,18 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);ba
 footer{background:#041a14;color:#a9c0b4;text-align:center;padding:2rem 1rem;font-size:.9rem;position:relative;z-index:1}
 main{position:relative;z-index:1}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}h1 .l span,[data-r],.hero .in{transform:none;opacity:1}.th{stroke-dashoffset:0}.nd{display:none}}
+
+/* AJ couture photography and founder-brand profile */
+.art{position:relative;width:100%;max-width:470px;margin:auto}
+.hero-fashion{display:block;width:100%;height:min(590px,66vw);min-height:360px;object-fit:cover;object-position:center 24%;border:1px solid #d4af3780;border-radius:220px 220px 24px 24px;box-shadow:0 24px 70px #0006}
+.art-caption{position:absolute;left:1rem;right:1rem;bottom:1rem;padding:.9rem 1.1rem;border:1px solid #d4af3770;border-radius:14px;background:#06241ce8;color:#f6efdc;font-size:.9rem;text-align:center;backdrop-filter:blur(10px)}
+.frame{margin:0;max-width:410px;padding:12px;border:1.5px solid var(--gold);border-radius:220px 220px 22px 22px;background:linear-gradient(145deg,#fff8e8,#e8d9b7);box-shadow:0 24px 60px #06241c20;overflow:hidden}
+.frame img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:210px 210px 12px 12px;filter:brightness(1.04) saturate(1.06)}
+.frame figcaption{padding:1rem .5rem .45rem;text-align:center;font-size:.76rem;letter-spacing:.12em;color:var(--gt)}
+.frame figcaption strong{display:block;font:700 1.55rem var(--d);letter-spacing:.04em;color:var(--ink)}
+.tile{position:relative;aspect-ratio:3/4;margin:0;border-radius:20px;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#06241c;isolation:isolate}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2;transition:transform .6s}
+.tile:hover{transform:translateY(-8px) rotate(-1deg)}.tile:hover img{transform:scale(1.06)}
+.tile::after{content:"";position:absolute;inset:35% 0 0;z-index:-1;background:linear-gradient(transparent,#041a14ef)}
+.tile figcaption{padding:1.1rem;font:700 1.35rem/1.1 var(--d);text-shadow:0 2px 10px #0008}
+@media(max-width:860px){.hero-fashion{height:480px;min-height:0}}
