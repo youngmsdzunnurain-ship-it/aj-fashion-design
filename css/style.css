@@ -51,7 +51,7 @@ h1 .l:nth-child(3){color:#e6c36a;font-style:italic;font-weight:500}
 .mq span{padding-right:2.2rem}.mq span::after{content:"✦";margin-left:2.2rem}
 @keyframes sl{to{transform:translateX(-50%)}}
 [data-r]{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s cubic-bezier(.2,.9,.2,1);transition-delay:var(--dl,0s)}[data-r].on{opacity:1;transform:none}
-.ab .w{display:block;max-width:760px}
+.ab .w{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr);align-items:center;gap:clamp(2rem,5vw,5rem);max-width:1100px}
 .ab p{font-size:1.15rem}.ab p+p{margin-top:1rem}
 .frame{aspect-ratio:4/5;max-width:380px;border:1.5px solid var(--gold);border-radius:200px 200px 24px 24px;padding:12px;position:relative}
 .frame div{height:100%;border-radius:190px 190px 14px 14px;background:linear-gradient(160deg,#0b3d2e,#06241c);display:grid;place-items:center;color:#e6c36a;font:700 7rem var(--d);text-align:center;line-height:.9}
@@ -111,3 +111,10 @@ main{position:relative;z-index:1}
 
 /* Accessibility: visible labels and predictable keyboard focus for enquiries */
 .bk form label{display:block;font-weight:600;margin:.25rem 0 -.45rem}.bk input,.bk select,.bk textarea{min-height:48px}
+
+/* Founder portrait and supplied brand artwork */
+.frame{width:100%;max-width:380px;justify-self:end}
+.promo-showcase{padding:clamp(1.5rem,4vw,3rem) 0 5rem}
+.promo-showcase .w{display:flex;justify-content:center}
+.promo-art{display:block;width:min(100%,420px);height:auto;max-height:620px;object-fit:contain;border:1px solid #d4af3780;border-radius:22px;box-shadow:0 24px 70px #0004}
+@media(max-width:860px){.ab .w{grid-template-columns:1fr;max-width:760px}.frame{justify-self:center;max-width:340px}.promo-showcase{padding-top:1rem}}

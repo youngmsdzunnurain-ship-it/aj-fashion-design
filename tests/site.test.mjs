@@ -17,9 +17,15 @@ test("business identity and contact details are consistent", () => {
 });
 
 test("all required local site assets are present", () => {
-  for (const path of ["css/style.css", "js/script.js", "privacy.html", "assets/images/favicon.svg", "assets/images/aj-couture-promo.jpg"]) {
+  for (const path of ["css/style.css", "js/script.js", "privacy.html", "assets/images/favicon.svg", "assets/images/aj-couture-promo.jpg", "assets/images/aj-brand-profile.png"]) {
     assert.ok(existsSync(new URL("../" + path, import.meta.url)), "Missing local asset: " + path);
   }
+});
+
+test("all supplied brand photographs are displayed without replacing the original hero", () => {
+  assert.ok(html.includes('src="https://blog.pixieset.com/wp-content/uploads/2024/03/Felix-Adebayo-Woman-in-Green-Outfit-819x1024.jpg"'));
+  assert.ok(html.includes('src="assets/images/aj-brand-profile.png"'));
+  assert.ok(html.includes('src="assets/images/aj-couture-promo.jpg"'));
 });
 
 test("navigation anchors resolve to unique page sections", () => {
