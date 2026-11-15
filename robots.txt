@@ -1,3 +1,2 @@
-# Robots.txt — fashion
 User-agent: *
 Allow: /
