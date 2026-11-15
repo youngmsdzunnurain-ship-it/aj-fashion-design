@@ -36,6 +36,6 @@ The booking form opens WhatsApp with the visitor's message prefilled. It does no
 
 The gallery uses contemporary womenswear and African couture reference photography from ADJOAA, Wanni Fuga, TUBỌ and Otunba. These are editorial/product references, not confirmed photographs of AJ Stitches customers or completed commissions. Replace them with AJ Stitches original work when available.
 
-The profile section uses the enhanced image supplied for the AJ brand. Place it at `assets/images/aj-brand-profile-enhanced.jpg`.
+The profile section uses the enhanced image supplied for the AJ brand. Place it at `assets/images/aj-brand-profile.png`.
 
 Images are externally hosted and require an internet connection.
