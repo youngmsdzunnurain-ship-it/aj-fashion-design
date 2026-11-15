@@ -24,7 +24,9 @@ test("all required local site assets are present", () => {
 
 test("original hero stays in place and supplied AJ image is in the About column only", () => {
   assert.ok(html.includes('src="https://blog.pixieset.com/wp-content/uploads/2024/03/Felix-Adebayo-Woman-in-Green-Outfit-819x1024.jpg"'));
-  assert.match(html, /<section class="ab" id="about">[\\s\\S]*?<img class="about-image" src="assets\\/images\\/aj-couture-promo\\.jpg"/);\n  assert.doesNotMatch(html, /promo-showcase|aj-brand-profile\\.png/);\n  assert.equal((html.match(/src="assets\\/images\\/aj-couture-promo\\.jpg"/g) || []).length, 1);
+  assert.match(html, /<section class="ab" id="about">[\s\S]*?<img class="about-image" src="assets\/images\/aj-couture-promo\.jpg"/);
+  assert.doesNotMatch(html, /promo-showcase|aj-brand-profile\.png/);
+  assert.equal((html.match(/src="assets\/images\/aj-couture-promo\.jpg"/g) || []).length, 1);
 });
 
 test("navigation anchors resolve to unique page sections", () => {
