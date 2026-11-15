@@ -1,12 +1,7 @@
-var PHONE="2348106754141",GALLERY=[
- "https://images.unsplash.com/photo-1687422808289-e721259c9eb4?auto=format&fit=crop&w=1200&q=85",
- "https://images.unsplash.com/photo-1663044022557-7d5d4c1d5318?auto=format&fit=crop&w=1200&q=85",
- "https://images.unsplash.com/photo-1621062089461-01f1eaebb66c?auto=format&fit=crop&w=1200&q=85"
-];
+var PHONE="2348106754141";
 var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
 var ws=["Bespoke Suits","Corporate Outfits","African Wear","Luxury · Style · Lifestyle"];
 $("#mq").innerHTML=ws.concat(ws,ws,ws).map(function(w){return"<span>"+w+"</span>"}).join("");
-GALLERY.forEach(function(u,i){var t=$$(".tile")[i];if(t){t.style.backgroundImage="url("+u+")"}});
 addEventListener("scroll",function(){var h=document.documentElement.scrollHeight-innerHeight;$("#tp i").style.transform="scaleX("+(h>0?scrollY/h:0)+")"},{passive:true});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.15});
 $$("[data-r]").forEach(function(e){io.observe(e)});
