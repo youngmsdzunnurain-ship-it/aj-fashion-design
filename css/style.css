@@ -89,18 +89,25 @@ main{position:relative;z-index:1}
 
 /* AJ couture photography and founder-brand profile */
 .art{position:relative;width:100%;max-width:470px;margin:auto}
-.hero-fashion{display:block;width:100%;height:min(590px,66vw);min-height:360px;object-fit:cover;object-position:center 24%;border:1px solid #d4af3780;border-radius:220px 220px 24px 24px;box-shadow:0 24px 70px #0006}
+.hero-fashion{display:block;width:100%;height:auto;max-height:590px;aspect-ratio:1403/1536;object-fit:contain;object-position:center;border:1px solid #d4af3780;border-radius:22px;background:#041a14;box-shadow:0 24px 70px #0006}
 .art-caption{position:absolute;left:1rem;right:1rem;bottom:1rem;padding:.9rem 1.1rem;border:1px solid #d4af3770;border-radius:14px;background:#06241ce8;color:#f6efdc;font-size:.9rem;text-align:center;backdrop-filter:blur(10px)}
 .frame{margin:0;max-width:410px;padding:12px;border:1.5px solid var(--gold);border-radius:220px 220px 22px 22px;background:linear-gradient(145deg,#fff8e8,#e8d9b7);box-shadow:0 24px 60px #06241c20;overflow:hidden}
 .frame img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;filter:brightness(1.04) saturate(1.06)}
 .frame figcaption{padding:1rem .5rem .45rem;text-align:center;font-size:.76rem;letter-spacing:.12em;color:var(--gt)}
 .frame figcaption strong{display:block;font:700 1.55rem var(--d);letter-spacing:.04em;color:var(--ink)}
-.tile{position:relative;aspect-ratio:3/4;margin:0;border-radius:20px;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#06241c;isolation:isolate}
-.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;transition:transform .6s}
-.tile:hover{transform:translateY(-8px) rotate(-1deg)}.tile:hover img{transform:scale(1.06)}
-.tile::after{content:"";position:absolute;inset:35% 0 0;z-index:1;background:linear-gradient(transparent,#041a14ef)}
-.tile figcaption{position:relative;z-index:2;padding:1.1rem;font:700 1.35rem/1.1 var(--d);text-shadow:0 2px 10px #0008}
-@media(max-width:860px){.hero-fashion{height:480px;min-height:0}}
+.gallery-intro{max-width:56ch;margin-top:1rem}
+.tile{position:relative;min-height:310px;aspect-ratio:3/4;margin:0;padding:1.4rem;border:1px solid #d4af3766;border-radius:20px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;color:#f6efdc;overflow:hidden;background:#06241c;isolation:isolate;transition:transform .35s}
+.tile::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.95}
+.tile::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#041a1420 0%,#041a14ee 100%)}
+.tile-one::before{background:radial-gradient(circle at 70% 25%,#d4af3788,transparent 34%),linear-gradient(145deg,#0b3d2e,#041a14)}
+.tile-two::before{background:radial-gradient(circle at 25% 30%,#e6c36a99,transparent 32%),linear-gradient(145deg,#244b3c,#071e18)}
+.tile-three::before{background:radial-gradient(circle at 70% 20%,#9c6b3d99,transparent 35%),linear-gradient(145deg,#5a3020,#06241c)}
+.tile-four::before{background:radial-gradient(circle at 30% 25%,#b9a7d899,transparent 35%),linear-gradient(145deg,#36304a,#06241c)}
+.tile-mark{position:absolute;top:1.2rem;left:1.4rem;color:#e6c36a;font:500 1rem var(--t);letter-spacing:.18em}
+.tile h3{font:700 clamp(1.7rem,3vw,2.2rem)/1.05 var(--d);max-width:12ch}
+.tile p{margin-top:.65rem;color:#d6e0d8;font-size:.94rem;line-height:1.5;max-width:28ch}
+.tile:hover{transform:translateY(-6px)}
+@media(max-width:860px){.hero-fashion{height:auto;max-height:560px;min-height:0}}
 
 /* Accessibility: visible labels and predictable keyboard focus for enquiries */
 .bk form label{display:block;font-weight:600;margin:.25rem 0 -.45rem}.bk input,.bk select,.bk textarea{min-height:48px}
