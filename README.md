@@ -36,6 +36,18 @@ The booking form opens WhatsApp with the visitor's message prefilled. It does no
 
 The gallery uses contemporary womenswear and African couture reference photography from ADJOAA, Wanni Fuga, TUBỌ and Otunba. These are editorial/product references, not confirmed photographs of AJ Stitches customers or completed commissions. Replace them with AJ Stitches original work when available.
 
-The profile section uses the enhanced image supplied for the AJ brand. Place it at `assets/images/aj-brand-profile.png`.
 
 Images are externally hosted and require an internet connection.
+
+
+## Search engine and sharing setup
+
+The page includes a descriptive title and meta description, Open Graph/Twitter sharing metadata, structured business information (JSON-LD), and a basic `robots.txt`.
+
+Before launch on a public domain:
+- Set the canonical URL and add a sitemap using the final HTTPS domain.
+- Verify the domain in Google Search Console and submit the sitemap.
+- Add the final brand photography and social-sharing image; the temporary profile image has intentionally been removed pending the owner's actual image.
+- Replace editorial fashion references with original AJ Stitches work when available and approved for publication.
+
+Search engines decide when and whether to index a site; metadata improves clarity but does not guarantee ranking or immediate appearance in results.
