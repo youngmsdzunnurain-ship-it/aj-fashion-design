@@ -7,7 +7,7 @@ A responsive, single-page website for A.J Couture & Lifestyle Hub, based in Offa
 - `index.html` — semantic page content, business metadata and enquiry form
 - `css/style.css` — responsive emerald-green and gold styling, layout and motion
 - `js/script.js` — accessible page interactions and WhatsApp enquiry handoff
-- `assets/images/aj-couture-promo.webp` — supplied A.J Couture promotional artwork (add this file before publishing)
+- `assets/images/aj-couture-promo.jpg` — supplied A.J Couture promotional artwork (add this file before publishing)
 - `assets/images/favicon.svg` — lightweight brand favicon
 - `privacy.html` — privacy notice
 - `netlify.toml` — static-site publishing and response-header configuration
@@ -51,7 +51,7 @@ Official guide: https://docs.netlify.com/start/quickstarts/deploy-from-repositor
 
 ## Before launch
 
-- Add `assets/images/aj-couture-promo.webp` (the supplied poster converted to optimized WebP).
+- Add `assets/images/aj-couture-promo.jpg` (the supplied promotional artwork (JPEG)).
 - Confirm the deployed preview on a phone and desktop.
 - Test the WhatsApp, telephone, email and Instagram links.
 - Add a canonical URL and sitemap only after the final public Netlify/custom domain is known.
