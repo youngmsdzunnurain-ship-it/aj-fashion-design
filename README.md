@@ -7,8 +7,7 @@ A responsive, single-page website for A.J Couture & Lifestyle Hub, based in Offa
 - `index.html` — semantic page content, business metadata and enquiry form
 - `css/style.css` — responsive emerald-green and gold styling, layout and motion
 - `js/script.js` — accessible page interactions and WhatsApp enquiry handoff
-- `assets/images/aj-couture-promo.jpg` — supplied A.J Couture promotional artwork displayed below About
-- `assets/images/aj-brand-profile.png` — founder portrait displayed beside the About copy
+- `assets/images/aj-couture-promo.jpg` — supplied A.J Couture promotional artwork displayed in the About image column
 - `assets/images/favicon.svg` — lightweight brand favicon
 - `privacy.html` — privacy notice
 - `netlify.toml` — static-site publishing and response-header configuration
@@ -35,7 +34,7 @@ The enquiry form prepares a WhatsApp message. Visitors review and send it themse
 
 ## Photography
 
-The hero retains its original emerald couture photograph. The supplied founder portrait appears beside the About copy, and the supplied A.J Couture promotional artwork is displayed in its own section. The four style cards describe services and are not presented as photographs of completed customer commissions. Add only original AJ work or photographs for which the business has publication permission.
+The hero retains its original emerald couture photograph. The supplied A.J Couture image appears inside the existing image frame beside the About copy. The original hero photograph remains in its original hero frame. The four style cards describe services and are not presented as photographs of completed customer commissions. Add only original AJ work or photographs for which the business has publication permission.
 
 ## Netlify deployment
 
@@ -52,7 +51,7 @@ Official guide: https://docs.netlify.com/start/quickstarts/deploy-from-repositor
 
 ## Before launch
 
-- Confirm the hero photograph, founder portrait and supplied promotional artwork all load in the deployed preview.
+- Confirm the original hero photograph and supplied About image load in the deployed preview.
 - Confirm the deployed preview on a phone and desktop.
 - Test the WhatsApp, telephone, email and Instagram links.
 - Add a canonical URL and sitemap only after the final public Netlify/custom domain is known.
