@@ -92,7 +92,7 @@ main{position:relative;z-index:1}
 .hero-fashion{display:block;width:100%;height:min(590px,66vw);min-height:360px;object-fit:cover;object-position:center 24%;border:1px solid #d4af3780;border-radius:220px 220px 24px 24px;box-shadow:0 24px 70px #0006}
 .art-caption{position:absolute;left:1rem;right:1rem;bottom:1rem;padding:.9rem 1.1rem;border:1px solid #d4af3770;border-radius:14px;background:#06241ce8;color:#f6efdc;font-size:.9rem;text-align:center;backdrop-filter:blur(10px)}
 .frame{margin:0;max-width:410px;padding:12px;border:1.5px solid var(--gold);border-radius:220px 220px 22px 22px;background:linear-gradient(145deg,#fff8e8,#e8d9b7);box-shadow:0 24px 60px #06241c20;overflow:hidden}
-.frame img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:210px 210px 12px 12px;filter:brightness(1.04) saturate(1.06)}
+.frame img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;filter:brightness(1.04) saturate(1.06)}
 .frame figcaption{padding:1rem .5rem .45rem;text-align:center;font-size:.76rem;letter-spacing:.12em;color:var(--gt)}
 .frame figcaption strong{display:block;font:700 1.55rem var(--d);letter-spacing:.04em;color:var(--ink)}
 .tile{position:relative;aspect-ratio:3/4;margin:0;border-radius:20px;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#06241c;isolation:isolate}
