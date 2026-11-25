@@ -17,20 +17,20 @@ test("business identity and contact details are consistent", () => {
 });
 
 test("required local assets are present", () => {
-  for (const path of ["css/style.css", "js/script.js", "privacy.html", "assets/images/favicon.svg", "assets/images/aj-monogram.svg", "assets/images/aj-couture-promo.jpg"]) {
+  for (const path of ["css/style.css", "js/script.js", "privacy.html", "assets/images/favicon.svg", "assets/images/aj-monogram.svg", "assets/images/aj-couture-promo.jpg", "assets/images/aj-stitches-crest.svg"]) {
     assert.ok(existsSync(new URL("../" + path, import.meta.url)), "Missing local asset: " + path);
   }
 });
 
-test("About section uses the original A.J crest artwork inside its arch", () => {
-  assert.match(html, /class="about-image about-brand-art" src="assets\/images\/aj-couture-promo\.jpg"/);
-  assert.match([...css.matchAll(/\.about-image-frame\s*\{[^}]*\}/g)].at(-1)?.[0] ?? "", /border-radius:\s*210px 210px 0 0/);
-  assert.match([...css.matchAll(/\.about-brand-art\s*\{[^}]*\}/g)].at(-1)?.[0] ?? "", /object-fit:\s*unset/);
-  assert.match([...css.matchAll(/\.about-brand-art\s*\{[^}]*\}/g)].at(-1)?.[0] ?? "", /left:\s*-141%/);
-  assert.match([...css.matchAll(/\.about-brand-art\s*\{[^}]*\}/g)].at(-1)?.[0] ?? "", /top:\s*-9%/);
-  assert.doesNotMatch(html, /aj-monogram\.svg/);
+test("About section uses the new AJ Stitches crest inside the preserved arch", () => {
+  assert.match(html, /class="about-image" src="assets\\/images\\/aj-stitches-crest\\.svg"/);
+  assert.match(html, /AJ Stitches/);
+  assert.match(html, /CULTURE &amp; LIFESTYLE HUB/);
+  const frameRules = [...css.matchAll(/\\.about-image-frame\\s*\\{[^}]*\\}/g)].map((match) => match[0]);
+  assert.match(frameRules.at(-1) ?? "", /border-radius:\\s*210px 210px 0 0/);
+  const imageRules = [...css.matchAll(/\\.about-image\\s*\\{[^}]*\\}/g)].map((match) => match[0]);
+  assert.match(imageRules.at(-1) ?? "", /object-fit:\\s*contain/);
 });
-
 test("hero bridal cutout has no arch or curved frame", () => {
   const heroRules = [...css.matchAll(/\.hero \.hero-fashion\s*\{[^}]*\}/g)].map((match) => match[0]);
   assert.match(heroRules.at(-1) ?? "", /clip-path:\s*none/);
