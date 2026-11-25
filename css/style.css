@@ -144,3 +144,18 @@ main{position:relative;z-index:1}
 .hero .art-caption{display:none}
 @media(max-width:860px){.hero .art{min-height:420px;max-width:360px}.hero .hero-fashion{max-height:500px}}
 @media(prefers-reduced-motion:reduce){.hero .hero-fashion{clip-path:none}}
+
+
+/* Image refresh: transparent bridal cutout and real Nigerian fashion gallery photography. */
+.hero .art{display:flex;align-items:center;justify-content:center;min-height:clamp(420px,48vw,620px);max-width:520px;overflow:visible;background:transparent}
+.hero .hero-fashion{display:block;width:100%;height:100%;max-height:660px;aspect-ratio:2/3;object-fit:contain;object-position:center bottom;border:0;border-radius:0;background:transparent;box-shadow:none;filter:drop-shadow(0 18px 30px #0005)}
+.art-caption{display:none}
+.about-image-frame{display:grid;place-items:center;width:100%;max-width:410px;aspect-ratio:4/5;padding:1.25rem;border:1.5px solid var(--gold);border-radius:210px 210px 0 0;overflow:hidden;background:linear-gradient(145deg,#fff8e8,#e8d9b7);box-shadow:0 24px 60px #06241c20}
+.about-image{display:block;width:min(82%,300px);height:auto;max-height:78%;object-fit:contain;object-position:center;border:0;border-radius:0;background:transparent}
+.tile{position:relative;isolation:isolate;overflow:hidden}
+.tile-photo{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .6s ease}
+.tile:hover .tile-photo{transform:scale(1.06)}
+.tile::before{z-index:-1;opacity:.2}
+.tile::after{z-index:-1;background:linear-gradient(180deg,#041a1410 0%,#041a14e8 100%)}
+@media(max-width:860px){.hero .art{min-height:390px;max-width:360px}.about-image-frame{max-width:340px}}
+@media(prefers-reduced-motion:reduce){.tile-photo{transition:none}}
