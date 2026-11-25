@@ -25,7 +25,8 @@ test("required local assets are present", () => {
 test("About section uses the original A.J crest artwork inside its arch", () => {
   assert.match(html, /class="about-image about-brand-art" src="assets\\/images\\/aj-couture-promo\\.jpg"/);
   assert.match([...css.matchAll(/\\.about-image-frame\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /border-radius:210px 210px 0 0/);
-  assert.match([...css.matchAll(/\\.about-brand-art\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /object-fit:cover/);
+  assert.match([...css.matchAll(/\\.about-brand-art\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /object-fit:unset/);
+  assert.match([...css.matchAll(/\\.about-brand-art\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /left:-141%/);
   assert.doesNotMatch(html, /aj-monogram\\.svg/);
 });
 
