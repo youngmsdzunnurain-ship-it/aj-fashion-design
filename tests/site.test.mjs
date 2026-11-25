@@ -24,8 +24,8 @@ test("required local assets are present", () => {
 
 test("About section keeps the arch frame and displays the AJ brand logo", () => {
   assert.match(html, /<figure class="frame about-image-frame"[^>]*>[\s\S]*?src="assets\/images\/aj-monogram\.svg"/);
-  assert.match(css, /\.about-image-frame\{[^}]*border-radius:210px 210px 0 0/);
-  assert.match(css, /\.about-image\{[^}]*object-fit:contain/);
+  assert.match([...css.matchAll(/\\.about-image-frame\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /border-radius:210px 210px 0 0/);
+  assert.match([...css.matchAll(/\\.about-image\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /object-fit:contain/);
   assert.doesNotMatch(html, /aj-brand-profile\.png/);
 });
 
