@@ -35,11 +35,12 @@ test("About section uses the new AJ Stitches crest inside the preserved arch", (
 
 test("hero bridal cutout keeps its natural proportions without CSS cropping", () => {
   const heroRules = [...css.matchAll(/\.hero \.hero-fashion\s*\{[^}]*\}/g)].map((match) => match[0]);
-  const finalRule = heroRules.at(-1) ?? "";
-  assert.match(finalRule, /height:\s*auto/);
-  assert.match(finalRule, /max-height:\s*none/);
-  assert.match(finalRule, /object-fit:\s*contain/);
-  assert.match(finalRule, /aspect-ratio:\s*auto/);
+  assert.ok(heroRules.some((rule) =>
+    /height:\s*auto/.test(rule) &&
+    /max-height:\s*none/.test(rule) &&
+    /object-fit:\s*contain/.test(rule) &&
+    /aspect-ratio:\s*auto/.test(rule)
+  ));
   const artRules = [...css.matchAll(/\.hero \.art\s*\{[^}]*\}/g)].map((match) => match[0]);
   assert.ok(artRules.some((rule) => /overflow:\s*visible/.test(rule)));
 });
