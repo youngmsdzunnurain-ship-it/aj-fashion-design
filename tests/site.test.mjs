@@ -8,6 +8,7 @@ const css = read("css/style.css");
 const js = read("js/script.js");
 const privacy = read("privacy.html");
 const netlify = read("netlify.toml");
+const crest = read("assets/images/aj-stitches-crest.svg");
 
 test("business identity and contact details are consistent", () => {
   for (const value of ["A.J Couture & Lifestyle Hub", "Offa, Kwara State, Nigeria", "haminatadebiyi@gmail.com", "+2348106754141", "@aj_couturehub"]) {
@@ -23,22 +24,25 @@ test("required local assets are present", () => {
 });
 
 test("About section uses the new AJ Stitches crest inside the preserved arch", () => {
-  assert.match(html, /class="about-image" src="assets\\/images\\/aj-stitches-crest\\.svg"/);
-  assert.match(html, /AJ Stitches/);
-  assert.match(html, /CULTURE &amp; LIFESTYLE HUB/);
-  const frameRules = [...css.matchAll(/\\.about-image-frame\\s*\\{[^}]*\\}/g)].map((match) => match[0]);
-  assert.match(frameRules.at(-1) ?? "", /border-radius:\\s*210px 210px 0 0/);
-  const imageRules = [...css.matchAll(/\\.about-image\\s*\\{[^}]*\\}/g)].map((match) => match[0]);
-  assert.match(imageRules.at(-1) ?? "", /object-fit:\\s*contain/);
-});
-test("hero bridal cutout has no arch or curved frame", () => {
-  const heroRules = [...css.matchAll(/\.hero \.hero-fashion\s*\{[^}]*\}/g)].map((match) => match[0]);
-  assert.match(heroRules.at(-1) ?? "", /clip-path:\s*none/);
-  assert.match(heroRules.at(-1) ?? "", /border-radius:\s*0/);
-  const artRules = [...css.matchAll(/\.hero \.art::before\s*\{[^}]*\}/g)].map((match) => match[0]);
-  assert.match(artRules.at(-1) ?? "", /display:\s*none/);
+  assert.match(html, /class="about-image" src="assets\/images\/aj-stitches-crest\.svg"/);
+  assert.match(crest, /AJ STITCHES/);
+  assert.match(crest, /CULTURE &amp; LIFESTYLE HUB/);
+  const frameRules = [...css.matchAll(/\.about-image-frame\s*\{[^}]*\}/g)].map((match) => match[0]);
+  assert.match(frameRules.at(-1) ?? "", /border-radius:\s*210px 210px 0 0/);
+  const imageRules = [...css.matchAll(/\.about-image\s*\{[^}]*\}/g)].map((match) => match[0]);
+  assert.match(imageRules.at(-1) ?? "", /object-fit:\s*contain/);
 });
 
+test("hero bridal cutout keeps its natural proportions without CSS cropping", () => {
+  const heroRules = [...css.matchAll(/\.hero \.hero-fashion\s*\{[^}]*\}/g)].map((match) => match[0]);
+  const finalRule = heroRules.at(-1) ?? "";
+  assert.match(finalRule, /height:\s*auto/);
+  assert.match(finalRule, /max-height:\s*none/);
+  assert.match(finalRule, /object-fit:\s*contain/);
+  assert.match(finalRule, /aspect-ratio:\s*auto/);
+  const artRules = [...css.matchAll(/\.hero \.art\s*\{[^}]*\}/g)].map((match) => match[0]);
+  assert.match(artRules.at(-1) ?? "", /overflow:\s*visible/);
+});
 test("gallery has four real Nigerian fashion photos with lazy loading", () => {
   const photos = [...html.matchAll(/class="tile-photo" src="https:\/\/images\.pexels\.com\/photos\//g)];
   assert.equal(photos.length, 4);
