@@ -322,7 +322,7 @@ main{position:relative;z-index:1}
     display: grid;
     place-items: center;
     padding: .75rem;
-    background: var(--bg2);
+    background: #f8f3e8;
     border-radius: 210px 210px 0 0;
 }
 .about-image-frame .about-image {
