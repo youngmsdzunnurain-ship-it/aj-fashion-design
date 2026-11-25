@@ -1,61 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 640" role="img" aria-labelledby="title desc">
 <title id="title">AJ Stitches — Culture &amp; Lifestyle Hub</title>
-<desc id="desc">A bespoke intertwined A and J calligraphic monogram enclosed by a fine circular stitch ring, with the AJ Stitches name beneath.</desc>
+<desc id="desc">Intertwined A and J calligraphy in rich two-tone gold, enclosed by a fine gold stitch circle.</desc>
 <defs>
-  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#f5e4ad"/><stop offset=".35" stop-color="#bd9140"/><stop offset=".68" stop-color="#e8cf8b"/><stop offset="1" stop-color="#9a702d"/>
+  <linearGradient id="gold-core" x1="0" y1="0" x2="0.9" y2="1">
+    <stop offset="0" stop-color="#f6e5b2"/><stop offset=".28" stop-color="#c99b43"/>
+    <stop offset=".62" stop-color="#8e6424"/><stop offset="1" stop-color="#d9b96f"/>
   </linearGradient>
-  <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#174b3b"/><stop offset="1" stop-color="#06251d"/>
+  <linearGradient id="gold-edge" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fff3cf"/><stop offset=".48" stop-color="#e7c879"/>
+    <stop offset="1" stop-color="#fff0c1"/>
   </linearGradient>
+  <linearGradient id="ring-gold" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#f9edc9"/><stop offset=".5" stop-color="#b98a38"/><stop offset="1" stop-color="#f1d995"/>
+  </linearGradient>
+  <filter id="gold-glow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="3.2" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
 </defs>
-
-<!-- The circular detail encloses the AJ monogram only. -->
-<circle class="monogram-ring" cx="300" cy="270" r="190" fill="none" stroke="url(#gold)" stroke-width="3"/>
-<circle cx="300" cy="270" r="181" fill="none" stroke="#bd9140" stroke-width="1" stroke-dasharray="1 8" stroke-linecap="round" opacity=".72"/>
-
-<!-- Bespoke calligraphic A: tapered entry, broad downstroke and fine exit swash. -->
-<g class="aj-calligraphy" fill="none" stroke="url(#ink)" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M158 366
-           C190 325 217 258 251 191
-           C266 160 279 139 293 130
-           C304 123 314 133 307 148
-           C277 215 243 294 222 355
-           C216 373 222 382 238 375
-           C270 361 304 331 333 300"
-        stroke-width="17"/>
-  <path d="M188 302 C230 287 272 284 315 294 C341 300 360 313 379 332"
-        stroke-width="8"/>
-  <path d="M145 380 C177 359 195 351 215 350"
-        stroke-width="5"/>
-  <!-- The J shares the A's central sweep to form one interlocked signature. -->
-  <path d="M346 151
-           C365 134 389 130 405 142
-           C418 152 409 174 399 198
-           C378 248 356 303 344 349
-           C330 402 347 430 383 423
-           C413 417 438 389 449 359
-           C458 334 453 312 437 300"
-        stroke-width="18"/>
-  <path d="M332 169 C350 151 367 145 386 146"
-        stroke-width="6"/>
-  <path d="M381 425 C410 438 446 422 466 394"
-        stroke-width="5"/>
-  <!-- Fine terminal strokes give the mark a pen-drawn finish. -->
-  <path d="M145 380 C126 394 113 409 105 426" stroke="url(#gold)" stroke-width="4"/>
-  <path d="M437 300 C450 291 464 289 478 296" stroke="url(#gold)" stroke-width="4"/>
+<!-- Circle frames only the monogram; the fine dotted inner line suggests hand stitching. -->
+<circle cx="300" cy="270" r="190" fill="none" stroke="url(#ring-gold)" stroke-width="3.5"/>
+<circle cx="300" cy="270" r="181" fill="none" stroke="#d6b56c" stroke-width="1.2" stroke-dasharray="1 8" stroke-linecap="round" opacity=".8"/>
+<!-- Raised pale-gold edging around a deeper antique-gold calligraphic core. -->
+<g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#gold-glow)">
+ <g stroke="url(#gold-edge)" stroke-width="23">
+  <path d="M158 366 C190 325 217 258 251 191 C266 160 279 139 293 130 C304 123 314 133 307 148 C277 215 243 294 222 355 C216 373 222 382 238 375 C270 361 304 331 333 300"/>
+  <path d="M188 302 C230 287 272 284 315 294 C341 300 360 313 379 332"/>
+  <path d="M346 151 C365 134 389 130 405 142 C418 152 409 174 399 198 C378 248 356 303 344 349 C330 402 347 430 383 423 C413 417 438 389 449 359 C458 334 453 312 437 300"/>
+ </g>
+ <g stroke="url(#gold-core)" stroke-width="15">
+  <path d="M158 366 C190 325 217 258 251 191 C266 160 279 139 293 130 C304 123 314 133 307 148 C277 215 243 294 222 355 C216 373 222 382 238 375 C270 361 304 331 333 300"/>
+  <path d="M188 302 C230 287 272 284 315 294 C341 300 360 313 379 332"/>
+  <path d="M346 151 C365 134 389 130 405 142 C418 152 409 174 399 198 C378 248 356 303 344 349 C330 402 347 430 383 423 C413 417 438 389 449 359 C458 334 453 312 437 300"/>
+ </g>
+ <g stroke="url(#gold-edge)" stroke-width="4">
+  <path d="M145 380 C126 394 113 409 105 426"/>
+  <path d="M437 300 C450 291 464 289 478 296"/>
+  <path d="M332 169 C350 151 367 145 386 146"/>
+  <path d="M381 425 C410 438 446 422 466 394"/>
+ </g>
 </g>
-
-<!-- Small, restrained stitch accents stay on the ring, not around the wording. -->
-<g fill="none" stroke="url(#gold)" stroke-width="2" stroke-linecap="round">
-  <path d="M300 77 v9 M300 454 v9 M107 270 h9 M484 270 h9"/>
+<!-- Minimal stitch ticks at the four compass points. -->
+<g fill="none" stroke="url(#ring-gold)" stroke-width="2.2" stroke-linecap="round">
+ <path d="M300 77v9 M300 454v9 M107 270h9 M484 270h9"/>
 </g>
-
-<text class="brand-name" x="300" y="535" text-anchor="middle"
-      fill="#173d31" font-family="'Cormorant Garamond', 'Times New Roman', serif"
-      font-size="43" font-weight="600" letter-spacing="5">AJ STITCHES</text>
-<path d="M224 552 H376" stroke="url(#gold)" stroke-width="1.5"/>
-<text class="brand-descriptor" x="300" y="582" text-anchor="middle"
-      fill="#87672f" font-family="Jost, Arial, sans-serif"
-      font-size="13" font-weight="500" letter-spacing="3.1">CULTURE &amp; LIFESTYLE HUB</text>
+<text x="300" y="535" text-anchor="middle" fill="#173d31" font-family="'Cormorant Garamond','Times New Roman',serif" font-size="43" font-weight="600" letter-spacing="5">AJ STITCHES</text>
+<path d="M224 552H376" stroke="url(#ring-gold)" stroke-width="1.5"/>
+<text x="300" y="582" text-anchor="middle" fill="#a27a35" font-family="Jost,Arial,sans-serif" font-size="13" font-weight="500" letter-spacing="3.1">CULTURE &amp; LIFESTYLE HUB</text>
 </svg>
