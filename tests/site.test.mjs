@@ -23,8 +23,13 @@ test("required local assets are present", () => {
   }
 });
 
-test("About section uses the new AJ Stitches crest inside the preserved arch", () => {
+test("AJ calligraphy alone sits inside a single circle, with no crown and compact wordmark below", () => {
   assert.match(html, /class="about-image" src="assets\/images\/aj-stitches-crest\.svg"/);
+  assert.doesNotMatch(crest, /crown|<text[^>]*>A<\/text>|<text[^>]*>J<\/text>/i);
+  assert.match(crest, /class="monogram-ring"/);
+  assert.match(crest, /class="aj-calligraphy"/);
+  assert.match(crest, /class="brand-name"/);
+  assert.match(crest, /class="brand-descriptor"/);
   assert.match(crest, /AJ STITCHES/);
   assert.match(crest, /CULTURE &amp; LIFESTYLE HUB/);
   const frameRules = [...css.matchAll(/\.about-image-frame\s*\{[^}]*\}/g)].map((match) => match[0]);
