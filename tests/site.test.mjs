@@ -16,23 +16,30 @@ test("business identity and contact details are consistent", () => {
   assert.ok(privacy.includes("haminatadebiyi@gmail.com"));
 });
 
-test("all required local site assets are present", () => {
-  for (const path of ["css/style.css", "js/script.js", "privacy.html", "assets/images/favicon.svg", "assets/images/aj-couture-promo.jpg"]) {
+test("required local assets are present", () => {
+  for (const path of ["css/style.css", "js/script.js", "privacy.html", "assets/images/favicon.svg", "assets/images/aj-monogram.svg", "assets/images/aj-emerald-bridal-cutout.webp", "assets/images/aj-couture-promo.jpg"]) {
     assert.ok(existsSync(new URL("../" + path, import.meta.url)), "Missing local asset: " + path);
   }
 });
 
-test("original hero stays in place and supplied AJ image is in the About column only", () => {
-  assert.ok(html.includes('src="https://blog.pixieset.com/wp-content/uploads/2024/03/Felix-Adebayo-Woman-in-Green-Outfit-819x1024.jpg"'));
-  assert.match(html, /<section class="ab" id="about">[\s\S]*?<img class="about-image" src="assets\/images\/aj-couture-promo\.jpg"/);
-  assert.doesNotMatch(html, /promo-showcase|aj-brand-profile\.png/);
-  assert.equal((html.match(/src="assets\/images\/aj-couture-promo\.jpg"/g) || []).length, 1);
+test("hero uses the transparent emerald bridal cutout, not a boxed external photograph", () => {
+  assert.match(html, /class="hero-fashion" src="assets\/images\/aj-emerald-bridal-cutout\.webp"/);
+  assert.match(css, /\.hero \.hero-fashion\{[^}]*object-fit:contain[^}]*border:0[^}]*background:transparent/);
 });
 
-test("hero portrait is presented without a card and About artwork fills the existing arch frame", () => {
-  assert.match(css, /\.hero-fashion\{[^}]*border:0[^}]*border-radius:0[^}]*background:transparent[^}]*box-shadow:none/);
-  assert.match(css, /\.about-image\{[^}]*object-fit:cover[^}]*border-radius:190px 190px 14px 14px/);
-  assert.doesNotMatch(css.match(/\.about-image\{[^}]*\}/)?.[0] ?? "", /border-radius:50%|object-fit:contain/);
+test("About section keeps the arch frame and displays the AJ brand logo", () => {
+  assert.match(html, /<figure class="frame about-image-frame"[^>]*>[\s\S]*?src="assets\/images\/aj-monogram\.svg"/);
+  assert.match(css, /\.about-image-frame\{[^}]*border-radius:210px 210px 0 0/);
+  assert.match(css, /\.about-image\{[^}]*object-fit:contain/);
+  assert.doesNotMatch(html, /aj-brand-profile\.png/);
+});
+
+test("gallery has four real Nigerian fashion photos with lazy loading", () => {
+  const photos = [...html.matchAll(/class="tile-photo" src="https:\/\/images\.pexels\.com\/photos\//g)];
+  assert.equal(photos.length, 4);
+  assert.equal((html.match(/class="tile-photo"/g) || []).length, 4);
+  assert.equal((html.match(/loading="lazy"/g) || []).length >= 4, true);
+  assert.match(css, /\.tile-photo\{[^}]*object-fit:cover/);
 });
 
 test("navigation anchors resolve to unique page sections", () => {
