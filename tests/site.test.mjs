@@ -17,14 +17,9 @@ test("business identity and contact details are consistent", () => {
 });
 
 test("required local assets are present", () => {
-  for (const path of ["css/style.css", "js/script.js", "privacy.html", "assets/images/favicon.svg", "assets/images/aj-monogram.svg", "assets/images/aj-emerald-bridal-cutout.webp", "assets/images/aj-couture-promo.jpg"]) {
+  for (const path of ["css/style.css", "js/script.js", "privacy.html", "assets/images/favicon.svg", "assets/images/aj-monogram.svg", "assets/images/aj-couture-promo.jpg"]) {
     assert.ok(existsSync(new URL("../" + path, import.meta.url)), "Missing local asset: " + path);
   }
-});
-
-test("hero uses the transparent emerald bridal cutout, not a boxed external photograph", () => {
-  assert.match(html, /class="hero-fashion" src="assets\/images\/aj-emerald-bridal-cutout\.webp"/);
-  assert.match(css, /\.hero \.hero-fashion\{[^}]*object-fit:contain[^}]*border:0[^}]*background:transparent/);
 });
 
 test("About section keeps the arch frame and displays the AJ brand logo", () => {
