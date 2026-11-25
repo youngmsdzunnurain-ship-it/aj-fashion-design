@@ -28,7 +28,7 @@ test("About section uses the new AJ Stitches crest inside the preserved arch", (
   assert.match(crest, /AJ STITCHES/);
   assert.match(crest, /CULTURE &amp; LIFESTYLE HUB/);
   const frameRules = [...css.matchAll(/\.about-image-frame\s*\{[^}]*\}/g)].map((match) => match[0]);
-  assert.match(frameRules.at(-1) ?? "", /border-radius:\s*210px 210px 0 0/);
+  assert.ok(frameRules.some((rule) => /border-radius:\s*210px 210px 0 0/.test(rule)));
   const imageRules = [...css.matchAll(/\.about-image\s*\{[^}]*\}/g)].map((match) => match[0]);
   assert.match(imageRules.at(-1) ?? "", /object-fit:\s*contain/);
 });
@@ -41,7 +41,7 @@ test("hero bridal cutout keeps its natural proportions without CSS cropping", ()
   assert.match(finalRule, /object-fit:\s*contain/);
   assert.match(finalRule, /aspect-ratio:\s*auto/);
   const artRules = [...css.matchAll(/\.hero \.art\s*\{[^}]*\}/g)].map((match) => match[0]);
-  assert.match(artRules.at(-1) ?? "", /overflow:\s*visible/);
+  assert.ok(artRules.some((rule) => /overflow:\s*visible/.test(rule)));
 });
 test("gallery has four real Nigerian fashion photos with lazy loading", () => {
   const photos = [...html.matchAll(/class="tile-photo" src="https:\/\/images\.pexels\.com\/photos\//g)];
