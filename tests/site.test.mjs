@@ -22,11 +22,21 @@ test("required local assets are present", () => {
   }
 });
 
-test("About section keeps the arch frame and displays the AJ brand logo", () => {
-  assert.match(html, /<figure class="frame about-image-frame"[^>]*>[\s\S]*?src="assets\/images\/aj-monogram\.svg"/);
-  assert.match([...css.matchAll(/\.about-image-frame\{[^}]*\}/g)].at(-1)?.[0] ?? "", /border-radius:210px 210px 0 0/);
-  assert.match([...css.matchAll(/\.about-image\{[^}]*\}/g)].at(-1)?.[0] ?? "", /object-fit:contain/);
-  assert.doesNotMatch(html, /aj-brand-profile\.png/);
+test("About section uses the original A.J crest artwork inside its arch", () => {
+  assert.match(html, /class="about-image about-brand-art" src="assets\\/images\\/aj-couture-promo\\.jpg"/);
+  assert.match([...css.matchAll(/\\.about-image-frame\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /border-radius:210px 210px 0 0/);
+  assert.match([...css.matchAll(/\\.about-brand-art\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /object-fit:unset/);
+  assert.match([...css.matchAll(/\\.about-brand-art\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /left:-141%/);
+  assert.match([...css.matchAll(/\\.about-brand-art\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /top:-9%/);
+  assert.doesNotMatch(html, /aj-monogram\\.svg/);
+});
+
+test("hero bridal cutout has no arch or curved frame", () => {
+  const heroRules = [...css.matchAll(/\\.hero \\.hero-fashion\\s*\\{[^}]*\\}/g)].map((match) => match[0]);
+  assert.match(heroRules.at(-1) ?? "", /clip-path:none/);
+  assert.match(heroRules.at(-1) ?? "", /border-radius:0/);
+  const artRules = [...css.matchAll(/\\.hero \\.art::before\\s*\\{[^}]*\\}/g)].map((match) => match[0]);
+  assert.match(artRules.at(-1) ?? "", /display:none/);
 });
 
 test("gallery has four real Nigerian fashion photos with lazy loading", () => {
