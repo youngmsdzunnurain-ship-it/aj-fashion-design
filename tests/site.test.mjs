@@ -23,20 +23,20 @@ test("required local assets are present", () => {
 });
 
 test("About section uses the original A.J crest artwork inside its arch", () => {
-  assert.match(html, /class="about-image about-brand-art" src="assets\\/images\\/aj-couture-promo\\.jpg"/);
-  assert.match([...css.matchAll(/\\.about-image-frame\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /border-radius:210px 210px 0 0/);
-  assert.match([...css.matchAll(/\\.about-brand-art\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /object-fit:unset/);
-  assert.match([...css.matchAll(/\\.about-brand-art\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /left:-141%/);
-  assert.match([...css.matchAll(/\\.about-brand-art\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /top:-9%/);
-  assert.doesNotMatch(html, /aj-monogram\\.svg/);
+  assert.match(html, /class="about-image about-brand-art" src="assets\/images\/aj-couture-promo\.jpg"/);
+  assert.match([...css.matchAll(/\.about-image-frame\s*\{[^}]*\}/g)].at(-1)?.[0] ?? "", /border-radius:\s*210px 210px 0 0/);
+  assert.match([...css.matchAll(/\.about-brand-art\s*\{[^}]*\}/g)].at(-1)?.[0] ?? "", /object-fit:\s*unset/);
+  assert.match([...css.matchAll(/\.about-brand-art\s*\{[^}]*\}/g)].at(-1)?.[0] ?? "", /left:\s*-141%/);
+  assert.match([...css.matchAll(/\.about-brand-art\s*\{[^}]*\}/g)].at(-1)?.[0] ?? "", /top:\s*-9%/);
+  assert.doesNotMatch(html, /aj-monogram\.svg/);
 });
 
 test("hero bridal cutout has no arch or curved frame", () => {
-  const heroRules = [...css.matchAll(/\\.hero \\.hero-fashion\\s*\\{[^}]*\\}/g)].map((match) => match[0]);
-  assert.match(heroRules.at(-1) ?? "", /clip-path:none/);
-  assert.match(heroRules.at(-1) ?? "", /border-radius:0/);
-  const artRules = [...css.matchAll(/\\.hero \\.art::before\\s*\\{[^}]*\\}/g)].map((match) => match[0]);
-  assert.match(artRules.at(-1) ?? "", /display:none/);
+  const heroRules = [...css.matchAll(/\.hero \.hero-fashion\s*\{[^}]*\}/g)].map((match) => match[0]);
+  assert.match(heroRules.at(-1) ?? "", /clip-path:\s*none/);
+  assert.match(heroRules.at(-1) ?? "", /border-radius:\s*0/);
+  const artRules = [...css.matchAll(/\.hero \.art::before\s*\{[^}]*\}/g)].map((match) => match[0]);
+  assert.match(artRules.at(-1) ?? "", /display:\s*none/);
 });
 
 test("gallery has four real Nigerian fashion photos with lazy loading", () => {
