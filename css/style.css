@@ -265,3 +265,53 @@ main{position:relative;z-index:1}
     background: transparent;
     object-fit: contain;
 }
+
+
+/* Final artwork treatment: keep the full transparent bridal cutout visible and preserve the About arch. */
+.hero .art {
+    min-height: 0;
+    height: auto;
+    align-self: end;
+    overflow: visible;
+    background: transparent;
+}
+.hero .hero-fashion {
+    display: block;
+    width: min(100%, 520px);
+    height: auto;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center bottom;
+    overflow: visible;
+    clip-path: none !important;
+}
+.about-image-frame {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    max-width: 410px;
+    aspect-ratio: 4 / 5;
+    padding: 1rem;
+    border: 1.5px solid var(--gold);
+    border-radius: 210px 210px 0 0;
+    overflow: hidden;
+    background: #06241c;
+}
+.about-image {
+    position: static;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+@media (max-width: 860px) {
+    .hero .art { min-height: 0; max-width: 390px; }
+    .hero .hero-fashion { width: min(100%, 390px); }
+    .about-image-frame { max-width: 340px; }
+}
