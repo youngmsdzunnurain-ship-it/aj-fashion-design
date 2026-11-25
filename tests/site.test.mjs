@@ -27,6 +27,7 @@ test("About section uses the original A.J crest artwork inside its arch", () => 
   assert.match([...css.matchAll(/\\.about-image-frame\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /border-radius:210px 210px 0 0/);
   assert.match([...css.matchAll(/\\.about-brand-art\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /object-fit:unset/);
   assert.match([...css.matchAll(/\\.about-brand-art\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /left:-141%/);
+  assert.match([...css.matchAll(/\\.about-brand-art\\s*\\{[^}]*\\}/g)].at(-1)?.[0] ?? "", /top:-9%/);
   assert.doesNotMatch(html, /aj-monogram\\.svg/);
 });
 
